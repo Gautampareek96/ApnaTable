@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/apnatable"
+        android:label="Apna Table"
+        android:roundIcon="@mipmap/apnatable_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KhauGali"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31" >
+        <activity
+            android:name=".EditMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TableStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateTableActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DeliveryStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PreorderStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BusinessTableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BusinessMenuActivity"
+            android:exported="false" />
+        <activity android:name=".BusinessMainActivity" /> <!-- ✅ Make User_Type the launcher activity -->
+        <activity
+            android:name=".User_Type"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity android:name=".SignUpActivity" />
+    </application>
+
+</manifest>

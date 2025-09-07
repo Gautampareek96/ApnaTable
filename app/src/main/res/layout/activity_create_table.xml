@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="25dp"
+    android:paddingBottom="25dp">
+
+    <!-- SCROLLABLE GRID -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/tableGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F1F1F1"
+                android:padding="12dp"
+                android:useDefaultMargins="true" />
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <!-- TOOL LAYOUT floating bottom-end -->
+    <!-- TOOL LAYOUT floating bottom-end -->
+    <LinearLayout
+        android:id="@+id/toolLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="90dp">
+
+    <ImageButton
+        android:id="@+id/toolTable"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_orange"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:src="@drawable/table_restaurant"
+        android:contentDescription="Table" />
+
+    <ImageButton
+        android:id="@+id/toolChair"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_orange"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:src="@drawable/chair"
+        android:contentDescription="Chair" />
+
+    <ImageButton
+        android:id="@+id/toolDelete"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_orange"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:src="@drawable/delete"
+        android:contentDescription="Delete" />
+
+    <ImageButton
+        android:id="@+id/toolEdit"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/circle_orange"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:src="@drawable/edit"
+        android:contentDescription="Edit" />
+</LinearLayout>
+
+    <!-- FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addTableBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="40dp"
+        android:contentDescription="Toggle Tools"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="@android:color/white"
+        android:backgroundTint="#E9A557"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/editActionsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="90dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/moveBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/move_icon"
+            android:contentDescription="Move"
+            android:padding="8dp" />
+
+        <ImageButton
+            android:id="@+id/rotateBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/rotate_icon"
+            android:contentDescription="Rotate"
+            android:padding="8dp" />
+
+        <ImageButton
+            android:id="@+id/combineBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/combine_icon"
+            android:contentDescription="Combine"
+            android:padding="8dp" />
+
+        <ImageButton
+            android:id="@+id/renameBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/rename_icon"
+            android:contentDescription="Rename"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/moveArrowLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/arrowUp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/up"
+            android:contentDescription="Move Up"
+            app:layout_constraintBottom_toTopOf="@+id/arrowCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/arrowLeft"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/left"
+            android:contentDescription="Move Left"
+            app:layout_constraintTop_toTopOf="@+id/arrowCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/arrowCenter"
+            app:layout_constraintEnd_toStartOf="@+id/arrowCenter" />
+
+        <ImageButton
+            android:id="@+id/arrowCenter"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/arrowRight"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/right"
+            android:contentDescription="Move Right"
+            app:layout_constraintTop_toTopOf="@+id/arrowCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/arrowCenter"
+            app:layout_constraintStart_toEndOf="@+id/arrowCenter" />
+
+        <ImageButton
+            android:id="@+id/arrowDown"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/down"
+            android:contentDescription="Move Down"
+            app:layout_constraintTop_toBottomOf="@+id/arrowCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
